@@ -1,3 +1,6 @@
+using RealEstateApp.Services;
+using RealEstateApp.Services.Interfaces;
+
 namespace RealEstateApp
 {
     public class Program
@@ -8,6 +11,7 @@ namespace RealEstateApp
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<IRealtyService, RealtyService>();
 
             var app = builder.Build();
 
@@ -28,7 +32,7 @@ namespace RealEstateApp
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=HomePage}/{action=Index}/{id?}");
 
             app.Run();
         }
