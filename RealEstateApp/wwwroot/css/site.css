@@ -17,3 +17,34 @@ body {
     margin-bottom: 60px;
     background-color: #808080;
 }
+
+.txt-fine1 {
+    font-weight: bold;
+    font-size: 58px;
+    color: white;
+}
+
+.txt-fine2
+{
+    font-weight:bold;
+    font-size: 58px;
+    color:green;
+}
+
+.txt-back
+{
+    font-size:26px;
+    color:green;
+}
+
+.txt-logo {
+    color: rgba(0,0,0,0.6);
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+    font-size: 26px;
+    margin-left: 6%;
+    // зачем если все равно обнуляете в конце? text-align: center;
+    text-decoration: none;
+    margin: 0;
+    padding-top: 16px;
+    // может это вам надо?
+}
