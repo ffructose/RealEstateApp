@@ -35,7 +35,7 @@ namespace RealEstateApp.Services
             }
         }
 
-        public async Task<ActionResult<List<ListForSaleModel>>> ListForSale()
+        public async Task<List<ListForSaleModel>> ListForSale()
         {
             if (autoCompleteModel == null) return null;
             listForSaleModel = new List<ListForSaleModel>();

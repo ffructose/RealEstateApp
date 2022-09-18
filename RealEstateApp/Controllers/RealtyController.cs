@@ -15,7 +15,6 @@ namespace RealEstateApp.Controllers
         [HttpGet]
         public async Task<ActionResult> Index()
         {
-            var temp = await _realtyService.ListForSale();
             return View(await _realtyService.ListForSale());
         }
 
@@ -33,7 +32,7 @@ namespace RealEstateApp.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<ListForSaleModel>>> ListForSale()
+        public async Task<List<ListForSaleModel>> ListForSale()
         {
             return await _realtyService.ListForSale();
         }
