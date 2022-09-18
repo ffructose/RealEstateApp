@@ -15,26 +15,27 @@ namespace RealEstateApp.Controllers
         [HttpGet]
         public async Task<ActionResult> Index()
         {
-            return View();
+            var temp = await _realtyService.ListForSale();
+            return View(await _realtyService.ListForSale());
         }
 
         [HttpPost]
-        public async Task<ActionResult<List<ListForSaleModel>>> Index(string input)
+        public async Task<ActionResult> Index(string? input)
         {
             await _realtyService.GetAutoComplete(input);
-            return View(_realtyService.ListForSale());
+            return RedirectToAction("Index");
         }
 
         [HttpGet("[action]/{input}")]
         public async Task<ActionResult<AutoCompleteModel>> GetAutoComplete(string input)
         {
-            return Ok(await _realtyService.GetAutoComplete(input));
+            return await _realtyService.GetAutoComplete(input);
         }
 
         [HttpGet]
         public async Task<ActionResult<List<ListForSaleModel>>> ListForSale()
         {
-            return (await _realtyService.ListForSale());
+            return await _realtyService.ListForSale();
         }
     }
 }

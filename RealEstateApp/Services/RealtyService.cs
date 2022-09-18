@@ -40,7 +40,7 @@ namespace RealEstateApp.Services
             if (autoCompleteModel == null) return null;
             listForSaleModel = new List<ListForSaleModel>();
             var client = new HttpClient();
-            for (int i = 0; i < autoCompleteModel.autocomplete.Count; i++)
+            for (int i = 0; i < /*autoCompleteModel.autocomplete.Count*/1; i++)
             {
                 var request = new HttpRequestMessage
                 {

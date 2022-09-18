@@ -1,4 +1,4 @@
-﻿@model List<ListForSaleModel>
+﻿@model ActionResult<List<RealEstateApp.Models.ListForSaleModel>>
 @{
     ViewData["Title"] = "Real Estate App";
 }
@@ -17,4 +17,8 @@
         <input type="text" name="input" class="text-center flex w-full rounded-lg text-background font-semibold text-base py-3 w-full rounded-lg" placeholder="Enter the location for properties eg: New York"/>
         <input type="submit" class="nav-link w-full text-center insert-text mt-3 text-base py-3 bg-active rounded-lg" value="Search" />
     </form>
+
+    <div>
+        @Html.DisplayNameFor(model =>model)
+    </div>
 </body>
