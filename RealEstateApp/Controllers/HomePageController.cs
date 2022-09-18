@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RealEstateApp.Services.Interfaces;
 
 namespace RealEstateApp.Controllers
 {
     public class HomePageController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
     }
 }

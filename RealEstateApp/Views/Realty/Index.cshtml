@@ -1,0 +1,20 @@
+﻿@model List<ListForSaleModel>
+@{
+    ViewData["Title"] = "Real Estate App";
+}
+<head>
+@*    @await Html.PartialAsync("_Favicons")*@
+</head>
+<body>
+    <br/>
+    <br/>
+    <br/>
+    <div class="text-center txt-logo">
+        <h1 class="txt-fine1">Real Estate <span class="txt-fine2">App</span> </h1>
+        <h2 class="txt-back">Discover latest properties for sale anywhere in USA.</h2>
+    </div>
+    <form method="post">
+        <input type="text" name="input" class="text-center flex w-full rounded-lg text-background font-semibold text-base py-3 w-full rounded-lg" placeholder="Enter the location for properties eg: New York"/>
+        <input type="submit" class="nav-link w-full text-center insert-text mt-3 text-base py-3 bg-active rounded-lg" value="Search" />
+    </form>
+</body>
