@@ -32,7 +32,7 @@ namespace RealEstateApp
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=HomePage}/{action=Index}/{id?}");
+                pattern: "{controller=Realty}/{action=Index}/{input?}");
 
             app.Run();
         }
