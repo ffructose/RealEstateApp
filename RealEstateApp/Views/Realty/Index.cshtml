@@ -1,6 +1,6 @@
 ﻿@model List<RealEstateApp.Models.ListForSaleModel>
 @{
-    ViewData["Title"] = "Real Estate App";
+    ViewData["Title"] = "Index";
 }
 
 <br />
@@ -17,7 +17,10 @@
 <br />
 <br />
 <br />
-<div>
-    <p>@Html.DisplayNameFor(model =>model[0].listings[1])</p>
-</div>
+@if (Model != null)
+{
+    <div>
+        <p class="">@Model[0].listings[0].city</p>
+    </div>
+}
 

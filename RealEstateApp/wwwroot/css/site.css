@@ -18,6 +18,11 @@ body {
     background-color: rgba(29,29,32);
 }
 
+p
+{
+    color: white;
+}
+
 .txt-fine1 {
     font-weight: bold;
     font-size: 58px;
