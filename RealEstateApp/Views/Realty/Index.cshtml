@@ -1,0 +1,36 @@
+﻿@model List<RealEstateApp.Models.ListForSaleModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<br />
+<br />
+<div class="text-center txt-logo">
+    <h1 class="txt-fine1">Real Estate <span class="txt-fine2">App</span> </h1>
+    <h2 class="txt-back">Discover latest properties for sale anywhere in USA.</h2>
+</div>
+<form method="post">
+    <input type="text" name="input" class="text-center flex w-full rounded-lg text-background font-semibold text-base py-3 w-full rounded-lg" placeholder="Enter the location for properties eg: New York" />
+    <input type="submit" class="nav-link w-full text-center insert-text mt-3 text-base py-3 bg-active rounded-lg" value="Search" />
+</form>
+<br />
+<br />
+<br />
+@if (Model != null)
+{
+    <div class="row">
+        @for (int i = 0; i < Model[0].listings.Count; i++)
+        {
+            <div class="col-3">
+                <div>
+                    <a href="@Model[0].listings[i].rdc_web_url"><img src="@Model[0].listings[i].photo"><a />
+                </div>
+                <p class="city">@Model[0].listings[i].city</p>
+                <p>@Model[0].listings[i].address</p>
+                <p class="money">@Model[0].listings[i].price</p>
+                <a href="@Model[0].listings[i].rdc_web_url">Details</a>
+            </div>
+        }
+    </div>
+}

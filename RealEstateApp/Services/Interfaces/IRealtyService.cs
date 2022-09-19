@@ -6,6 +6,6 @@ namespace RealEstateApp.Services.Interfaces
     public interface IRealtyService
     {
         Task<ActionResult<AutoCompleteModel>> GetAutoComplete(string input);
-        Task<ActionResult<List<ListForSaleModel>>> ListForSale();
+        Task<List<ListForSaleModel>> ListForSale();
     }
 }

@@ -8,10 +8,11 @@ namespace RealEstateApp.Services
     public class RealtyService : IRealtyService
     {
         private static AutoCompleteModel autoCompleteModel = null;
-        private static List<ListForSaleModel> listForSaleModel = new List<ListForSaleModel>();
+        private static List<ListForSaleModel> listForSaleModel = null;
 
         public async Task<ActionResult<AutoCompleteModel>> GetAutoComplete(string input)
         {
+            if (input == null) return null;
             var client = new HttpClient();
             var request = new HttpRequestMessage
             {
@@ -34,11 +35,12 @@ namespace RealEstateApp.Services
             }
         }
 
-        public async Task<ActionResult<List<ListForSaleModel>>> ListForSale()
+        public async Task<List<ListForSaleModel>> ListForSale()
         {
             if (autoCompleteModel == null) return null;
+            listForSaleModel = new List<ListForSaleModel>();
             var client = new HttpClient();
-            for (int i = 0; i < autoCompleteModel.autocomplete.Count; i++)
+            for (int i = 0; i < /*autoCompleteModel.autocomplete.Count*/1; i++)
             {
                 var request = new HttpRequestMessage
                 {
@@ -52,7 +54,7 @@ namespace RealEstateApp.Services
                 };
                 if (request == null) return null;
 
-                using (var response = await client.SendAsync(request))
+                using (var response = await client.SendAsync(request))//
                 {
                     response.EnsureSuccessStatusCode();
                     var body = await response.Content.ReadAsStringAsync();
