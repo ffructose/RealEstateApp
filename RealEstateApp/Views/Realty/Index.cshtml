@@ -19,8 +19,18 @@
 <br />
 @if (Model != null)
 {
-    <div>
-        <p class="">@Model[0].listings[0].city</p>
+    <div class="row">
+        @for (int i = 0; i < Model[0].listings.Count; i++)
+        {
+            <div class="col-3">
+                <div>
+                    <a href="@Model[0].listings[i].rdc_web_url"><img src="@Model[0].listings[i].photo"><a />
+                </div>
+                <p class="city">@Model[0].listings[i].city</p>
+                <p>@Model[0].listings[i].address</p>
+                <p class="money">@Model[0].listings[i].price</p>
+                <a href="@Model[0].listings[i].rdc_web_url">Details</a>
+            </div>
+        }
     </div>
 }
-
