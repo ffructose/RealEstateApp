@@ -10,7 +10,7 @@ namespace RealEstateApp.Services
         private static AutoCompleteModel autoCompleteModel = null;
         private static List<ListForSaleModel> listForSaleModel = null;
 
-        public async Task<ActionResult<AutoCompleteModel>> GetAutoComplete(string input)
+        public async Task<AutoCompleteModel> GetAutoComplete(string input)
         {
             if (input == null) return null;
             var client = new HttpClient();
