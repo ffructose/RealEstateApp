@@ -26,7 +26,7 @@ namespace RealEstateApp.Controllers
         }
 
         [HttpGet("[action]/{input}")]
-        public async Task<ActionResult<AutoCompleteModel>> GetAutoComplete(string input)
+        public async Task<AutoCompleteModel> GetAutoComplete(string input)
         {
             return await _realtyService.GetAutoComplete(input);
         }
