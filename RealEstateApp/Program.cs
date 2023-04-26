@@ -1,6 +1,6 @@
 using RealEstateApp.Services;
 using RealEstateApp.Services.Interfaces;
-
+// днапхи бев╡п же юмъ
 namespace RealEstateApp
 {
     public class Program
